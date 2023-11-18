@@ -2,18 +2,18 @@ $(document).ready(function () {
 
   $(".loader-window").fadeOut("slow");
 
-  $('.mobile-menu-button').click(function () {
-    $(this).toggleClass('mobile-menu-button--open');
+  $('.burger').click(function () {
+    $(this).toggleClass('burger-open');
     $(this).parent().find('.nav').toggleClass('nav--open');
   });
 
-  $('a.nav__item').on('click', function(e){
+  $('a.nav__item').on('click', function (e) {
     var id = $(this).attr('href'), vak = 90;
     id = id.replace('#', '.');
-    if($(window).width() <= 1200) {
+    if ($(window).width() <= 1200) {
       vak = 60;
     }
-    $('html,body').stop().animate({ scrollTop: $(id).offset().top - vak}, 1000);
+    $('html,body').stop().animate({ scrollTop: $(id).offset().top - vak }, 1000);
     e.preventDefault();
   });
 
@@ -22,25 +22,25 @@ $(document).ready(function () {
   // });
 
   var menuLinks = $('.nav__item');
-  $(window).scroll(function(){
+  $(window).scroll(function () {
     var scr = $(this).scrollTop();
 
     menuLinks.removeClass('active');
-    if($('.welcome').offset().top - 200 < scr && scr < ($('.welcome').offset().top + $('.welcome').outerHeight() - 200)) {
-     menuLinks.removeClass('active');
-     $('.nav__item--contacts').addClass('active');
+    if ($('.welcome').offset().top - 200 < scr && scr < ($('.welcome').offset().top + $('.welcome').outerHeight() - 200)) {
+      menuLinks.removeClass('active');
+      $('.nav__item--contacts').addClass('active');
     }
-    if($('.sale').offset().top - 200 < scr && scr < ($('.sale').offset().top + $('.sale').outerHeight() - 200)) {menuLinks.removeClass('active');menuLinks.eq(1).addClass('active');}
-    if($('.catalog-objects').offset().top - 200 < scr && scr < ($('.catalog-objects').offset().top + $('.catalog-objects').outerHeight() - 200)) {menuLinks.removeClass('active');menuLinks.eq(2).addClass('active');}
-    if($('.contacts').offset().top - 200 < scr && scr < ($('.contacts').offset().top + $('.contacts').outerHeight() - 200)) {menuLinks.removeClass('active');menuLinks.eq(3).addClass('active');}
+    if ($('.sale').offset().top - 200 < scr && scr < ($('.sale').offset().top + $('.sale').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(1).addClass('active'); }
+    if ($('.catalog-objects').offset().top - 200 < scr && scr < ($('.catalog-objects').offset().top + $('.catalog-objects').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(2).addClass('active'); }
+    if ($('.contacts').offset().top - 200 < scr && scr < ($('.contacts').offset().top + $('.contacts').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(3).addClass('active'); }
   });
 
-  function initContactMaps () {
+  function initContactMaps() {
     var myMapFirst = new ymaps.Map("contactMap", {
-        center: [54.2858767,48.3582629],
-        zoom: 17,
-        controls: ['']
-      }),
+      center: [54.2858767, 48.3582629],
+      zoom: 17,
+      controls: ['']
+    }),
       myPlacemarkFirst = new ymaps.Placemark(myMapFirst.getCenter(), {
       }, {
         // Опции.
@@ -86,51 +86,78 @@ function sendingDataForm() {
 
   allForms.forEach(function (form) {
     form.addEventListener('submit', function (e) {
-		e.preventDefault();
-		var countError = 0;
-		const elementsForm = [].slice.call(form.elements);
-		elementsForm.forEach((itemForm) => {
-		    if ((itemForm.getAttribute('type') !== 'submit')
-          	&& (itemForm.getAttribute('name') !== 'question')) {
-		      if (itemForm.value === '') {
-		        itemForm.classList.add('error');
-		        countError += 1;
-		        console.log(itemForm.getAttribute('type'));
-		      } else {
-		        itemForm.classList.remove('error');
-	  	      }
-		    }
-		    if (itemForm.getAttribute('type') === 'tel') {
-		      if (regexPhone.test(itemForm.value) === false) {
-		        countError += 1;
-		        itemForm.classList.add('error');
-		      }
-		    }
-		});
-
-		if (countError === 0) {
-	        var action = this.getAttribute('action');
-	        var method = this.getAttribute('method');
-	        var formData = new FormData(this);
-
-	        if (this.getAttribute('name') == 'donwload_price') {
-	          window.open("./html/files/price.xls");
-	        }
-	 
-	        ajaxSendingForm(action, method, formData).then(function (msg) {
-	          form.querySelector('.welcome__header-form').innerHTML = 'Заявка отправлена';
-	          var popupForm = form.parentNode.parentNode;
-
-	          if (popupForm.classList.contains('modal')) {
-	            setTimeout(function() {
-	              $(popupForm).modal('hide');
-	            }, 800);
-	          }
-	        }, function (error) {
-	          console.log(error);
-	        });
+      e.preventDefault();
+      var countError = 0;
+      const elementsForm = [].slice.call(form.elements);
+      elementsForm.forEach((itemForm) => {
+        if ((itemForm.getAttribute('type') !== 'submit')
+          && (itemForm.getAttribute('name') !== 'question')) {
+          if (itemForm.value === '') {
+            itemForm.classList.add('error');
+            countError += 1;
+            console.log(itemForm.getAttribute('type'));
+          } else {
+            itemForm.classList.remove('error');
+          }
         }
+        if (itemForm.getAttribute('type') === 'tel') {
+          if (regexPhone.test(itemForm.value) === false) {
+            countError += 1;
+            itemForm.classList.add('error');
+          }
+        }
+      });
+
+      if (countError === 0) {
+        var action = this.getAttribute('action');
+        var method = this.getAttribute('method');
+        var formData = new FormData(this);
+
+        if (this.getAttribute('name') == 'donwload_price') {
+          window.open("./html/files/price.xls");
+        }
+
+        ajaxSendingForm(action, method, formData).then(function (msg) {
+          form.querySelector('.welcome__header-form').innerHTML = 'Заявка отправлена';
+
+          // Add "sended" class to the form
+          form.classList.add('sended');
+
+          // Remove "sended" class after 0.8 seconds
+          setTimeout(function () {
+            form.classList.remove('sended');
+          }, 800);
+
+          var popupForm = form.parentNode.parentNode;
+
+          if (popupForm.classList.contains('modal')) {
+            setTimeout(function () {
+              $(popupForm).modal('hide');
+            }, 800);
+          }
+        }, function (error) {
+          console.log(error);
+        });
+      }
     });
   });
 }
 sendingDataForm();
+
+
+function headerCatalog() {
+  const btn = document.querySelector('[data-catalog-btn]');
+  const list = document.querySelector('[data-catalog-list]');
+
+  btn.addEventListener('click', () => {
+    list.classList.toggle('view');
+  })
+
+  document.addEventListener('click', (event) => {
+    if (!btn.contains(event.target)) {
+      list.classList.remove('view');
+    }
+  });
+}
+
+headerCatalog();
