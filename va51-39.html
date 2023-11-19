@@ -1,375 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>els-energo</title>
-    <link rel="stylesheet" href="./html/css/fonts/fonts.css">
-    <link rel="stylesheet" href="./html/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./html/css/normalize.css">
-    <link rel="stylesheet" href="./html/css/swiper.min.css">
-    <link rel="stylesheet" href="./html/css/style.css?v=3">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-      (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-          try {
-            w.yaCounter41101094 = new Ya.Metrika({
-              id:41101094,
-              clickmap:true,
-              trackLinks:true,
-              accurateTrackBounce:true
-            });
-          } catch(e) { }
-        });
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>els-energo</title>
+  <link rel="stylesheet" href="./html/css/fonts/fonts.css">
+  <link rel="stylesheet" href="./html/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./html/css/normalize.css">
+  <link rel="stylesheet" href="./html/css/swiper.min.css">
+  <link rel="stylesheet" href="./html/css/style.css?v=3">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function () {
+        try {
+          w.yaCounter41101094 = new Ya.Metrika({
+            id: 41101094,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+          });
+        } catch (e) { }
+      });
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
+      var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://mc.yandex.ru/metrika/watch.js";
 
-        if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-      })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript><div style="display: none;"><img src="https://mc.yandex.ru/watch/41101094" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+      } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript>
+    <div style="display: none;"><img src="https://mc.yandex.ru/watch/41101094" style="position:absolute; left:-9999px;"
+        alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
+
 <body>
-    <header  class="header">
-        <a class="header__logo-block" href="./"></a>
-        <div class="nav">
+  <header class="header">
+    <div class="header__top">
+      <a class="header__logo-block" href="./"></a>
+      <!-- <div class="nav">
             <span data-toggle="modal" data-target=".price-list" class="nav__item nav__item--contacts">Прайс лист</span>
             <a href="#sale" class="nav__item nav__item--services">спец предложение</a>
             <a href="#catalog-objects" class="nav__item nav__item--advantages">каталог</a>
             <a href="#contacts" class="nav__item nav__item--advantages">контакты</a>
             <span data-toggle="modal" data-target=".question-for-specialist" class="nav__item nav__item--advantages">заказать звонок</span>
-        </div>
-        <div class="header__phone">
-            <a href="tel:+8422712099" class="phone__block--link">8 (8422) 71-20-99</a>
-            <a href="tel:+79176334396" class="phone__block--link">+7 (917) 633-43-96</a>
-        </div>
-        <div class="mobile-menu-button">
-            <div class="nav-line-wrp">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-    <div class="loader-window"></div>
-
-    <div class="welcome detail">
-        <div class="welcome__item-wrp welcome__item-wrp--about">
-            <h1 class="welcome__header">Автоматические выключатели ВА51-39 до 630А</h1>
-            <div class="welcome__img" style="background-image: url('./html/img/5139.png')"></div>
-        </div>
-        <div class="welcome__item-wrp welcome__item-wrp--form">
-            <form action="./mail.php" method="POST" class="welcome__form" name="callback">
-                <div class="welcome__header-form">Оставьте заявку и получите выключатели со скидкой!</div>
-                <input type="text" name="name" placeholder="Имя*" required>
-                <input type="text" name="phone" placeholder="Телефон*" required>
-                <input type="text" name="email" placeholder="Электронная почта*" required>
-                <input type="text" name="question" placeholder="Комментарий">
-                <button type="submit" class="welcome__button">Отправить</button>
-            </form>
-        </div>
+        </div> -->
+      <div class="header__phone">
+        <a href="tel:+8422712099" class="phone__block--link">8 (8422) 71-20-99</a>
+        <a href="tel:+79176334396" class="phone__block--link">+7 (917) 633-43-96</a>
+        <a href="mailto:nva073@yandex.ru" class="phone__block--link phone__block--link-mail">nva073@yandex.ru</a>
+      </div>
     </div>
 
-    <div class="information">
-        <div class="container">
-            <div class="h3 h3--line h3--white">
-                <span>Описание и приемущества выключателя</span>
-            </div>
-            <div class="services__list">
-                <p class="services__list-item">выключатели рассчитаны на номинальные токи до 630А;</p>
-                <p class="services__list-item">обладают в зависимости от рода тока и величины напряжения коммутационной способностью - до 85кА;</p>
-                <p class="services__list-item">автоматические выключатели ВА51-39 обладают более высокими техническими характеристиками, лучшими массогабаритными показателями и могут заменить аппараты ВА57-39, А3130, А3140, А3720, А3730, А3730Ф, ВА52-37, ВА3726Ф;</p>
-                <p class="services__list-item">предусмотрена широкая гамма исполнений и вариантов комплектации;</p>
-                <p class="services__list-item">cохраняет работоспособность в диапазоне температур от – 50 до + 50°С и влажности воздуха до 98%;</p>
-                <p class="services__list-item">в части сейсмостойкости выключатели соответствуют дополнительным требованиям стандарта - ДТ5,6 по ГОСТ17516.1-90, что соответствует 9 баллам по MSK-64.</p>
-            </div>
+    <div class="header__bottom">
+      <div class="header-catalog">
+        <div class="header-catalog__btn" data-catalog-btn>
+          <img src="./html/img/header-catalog-icon.svg" alt="catalog icon">
+
+          <span>Каталог товаров</span>
+          <picture>
+            <source media="(max-width: 991px)" srcset="./html/img/header-catalog-tringle-mobile.svg" />
+            <source media="(min-width: 992px)" srcset="./html/img/header-catalog-tringle.svg" />
+            <img src="./html/img/header-catalog-tringle.svg" alt="catalog tringle">
+          </picture>
+
         </div>
+
+        <ul class="header-catalog__list" data-catalog-list>
+          <li>
+            <a href="#">
+              <img src="./html/img/header-catalog-item-1.svg" alt="Автоматические выключатели">
+              Автоматические выключатели</a>
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+
+            <ul>
+              <li>
+                <a href="#">Серия ВА/А3790 </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+
+                <ul>
+                  <li><a href="#">ВА55-43 до 1600А</a></li>
+                  <li><a href="#">ВА51-39, 400-630А</a></li>
+                  <li><a href="#">ВА57-35 до 250А</a></li>
+                  <li><a href="#">ВА57-35 до 250А</a></li>
+                  <li><a href="#">ВА04-36 до 630А</a></li>
+                  <li><a href="#">ВА51-39 до 630А</a></li>
+                  <li><a href="#">ВА50-41 до 1000А</a></li>
+                  <li><a href="#">ВА50-43 до 2000А</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="#">Серия АВМ/А2ВМ
+
+                </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+              </li>
+
+              <li>
+                <a href="#">Серия Электрон
+
+                </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="./html/img/header-catalog-item-2.svg" alt=" Вакуумные выключатели">
+              Вакуумные выключатели</a>
+
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="./html/img/header-catalog-item-3.svg" alt="Контакторы вакуумные">
+              Контакторы вакуумные</a>
+
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav">
+        <span data-toggle="modal" data-target=".price-list" class="nav__item nav__item--contacts">
+          Запросить
+          прайс-лист
+        </span>
+
+        <a href="#contacts" class="nav__item">Контакты</a>
+      </div>
+
+      <span data-toggle="modal" data-target=".question-for-specialist" class="nav__item nav__item--advantages">
+        Заказать
+        звонок
+      </span>
+
+      <div class="burger">
+        <span></span>
+      </div>
     </div>
 
-    <div class="advantages">
-        <div class="container">
-            <div class="h3 h3--line h3--white">
-                <span>Наши приемущества</span>
-            </div>
-            <div class="advantages-wrp">
-                <div class="advantages__item advantages__item--quality">
-                    <div class="advantages__header">Гарантия</div>
-                    <div class="advantages__desc">Гарантия 3 года на любой товар</div>
-                </div>
-                <div class="advantages__item advantages__item--wallet">
-                    <div class="advantages__header">Бесплатная доставка</div>
-                    <div class="advantages__desc">Доставка до любой транспортной компании за наш счет</div>
-                </div>
-                <div class="advantages__item advantages__item--money">
-                    <div class="advantages__header">Выгодно</div>
-                    <div class="advantages__desc">Гибкая ценовая политика для отдела снабжения</div>
-                </div>
-                <div class="advantages__item advantages__item--delivery">
-                    <div class="advantages__header">СРОЧНО</div>
-                    <div class="advantages__desc">Отгрузка оборудования от 2-х дней</div>
-                </div>
-            </div>
+  </header>
+  <div class="loader-window"></div>
+
+  <div class="welcome detail">
+
+    <h1 class="welcome__header">Автоматические выключатели ВА51-39 до 630А</h1>
+
+    <div class="detail__inner">
+      <div class="welcome__item-wrp welcome__item-wrp--about">
+        <img src="./html/img/5139.png" alt="">
+
+        <div class="welcome__item-price">
+          9999 ₽
         </div>
+
+        <div class="welcome__item-discont">
+          <p>вариант оформления</p>
+          <div>
+            <strike> 9999 ₽</strike>
+            <span> 3333 ₽</span>
+          </div>
+        </div>
+
+        <span data-toggle="modal" data-target=".submit-application" class="nav__item nav__item--advantages">
+          Оставить заявку
+        </span>
+      </div>
+      <div class="welcome__item-wrp welcome__item-wrp--form">
+        <form action="./mail.php" method="POST" class="welcome__form" name="callback">
+          <div class="welcome__header-form">Оставить заявку</div>
+          <div class="welcome__form-groups">
+            <div class="welcome__form-group">
+              <input type="text" name="name" placeholder="Имя*" required>
+              <input type="tel" name="phone" placeholder="Телефон*" required>
+              <input type="email" name="email" placeholder="Электронная почта*" required>
+            </div>
+
+            <div class="welcome__form-group">
+              <textarea type="text" name="question" placeholder="Вопрос"></textarea>
+
+              <div class="welcome__form-att-middle">* — Поля обязательные к заполнению</div>
+
+              <label class="welcome__form-checkbox-label" for="checkbox-4">
+                <input type="checkbox" id="checkbox-4">
+                <div class="welcome__form-checkbox-decor"></div>
+
+                <span>Я согласен на обработку персональных данных</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="welcome__form-footer">
+            <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
+            <button type="submit" class="welcome__button">Отправить</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <div class="catalog catalog--sale sale">
-        <div class="container">
-            <div class="h3 h3--line">
-                <span>Выгодные предложения</span>
-            </div>
-            <div class="catalog-wrp">
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va55-43.html"></a>
-                    <div class="catalog__price">67 000 руб.</div>
-                    <div class="catalog__img" style="background: url(./html/img/55-43.jpg) no-repeat top center"></div>
-                    <p class="catalog__desc">Автоматические выключатели <span>ВА55-43 до 1600А, стационарный, с электроприводом</span></p>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./electron-a25vuz.html"></a>
-                    <div class="catalog__price">123 000 руб.</div>
-                    <div class="catalog__img" style="background: url(./html/img/electron.jpg) no-repeat top center"></div>
-                    <p class="catalog__desc">Автоматические выключатели <span>Электрон Э25ВУ3</span></p>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va51-39.html"></a>
-                    <div class="catalog__price">6 300 руб.</div>
-                    <div class="catalog__img" style="background: url(./html/img/5139.png) no-repeat top center"></div>
-                    <p class="catalog__desc">Автоматические выключатели <span>ВА51-39, 400-630 А</span></p>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./avm-20sv.html"></a>
-                    <div class="catalog__price">57 000 руб.</div>
-                    <div class="catalog__img" style="background: url(./html/img/avm20cv.jpg) no-repeat top center"></div>
-                    <p class="catalog__desc">Автоматические выключатели <span>АВМ-20СВ</span></p>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 
-    <div class="catalog catalog-objects">
-        <div class="container">
-            <div class="h3 h3--line h3--white">
-                <span>Каталог товаров</span>
-            </div>
-            <div class="catalog-wrp">
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va57-35.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/ba57-35.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>ВА57-35 до 250А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va04-36.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/0436.png) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>ВА04-36 до 630А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va51-39.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/5139.png) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>ВА51-39 до 630А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./a3790.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/3790.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>А3790 до 630А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va50-41.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/50-41.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>ВА50-41 до 1000А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./va50-43.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/50-43.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>ВА50-43 до 2000А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./avm.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/avm.png) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>АВМ до 2000А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./av2m.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/av2m.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>АВ2М до 2000А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./electron.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/electron.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Автоматические выключатели <span>Электрон до 6300А</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./vakuumnye-vyklyuchateli-bb-tel-ism.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/bb-tel.png) no-repeat center"></div>
-                    <div class="catalog__desc">Вакуумные выключатели <span>ВВ/TEL(ISM)</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./bloki-upravleniya-i-pitaniya-bb-tel-ism.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/bp--tel.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Блоки управления и питания <span>BB/TEL(ISM)</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-                <div class="catalog__item">
-                    <a class="catalog__link" href="./kvt-10.html"></a>
-                    <!--<div class="catalog__price">770 000 руб.</div>-->
-                    <div class="catalog__img" style="background: url(./html/img/kvt-10.jpg) no-repeat center"></div>
-                    <div class="catalog__desc">Контакторы вакуумные <span>КВТ 10</span></div>
-                    <div class="catalog__button">подробнее</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="customers">
-        <div class="container">
-            <div class="h3 h3--line h3--white">
-                <span>География наших поставок</span>
-            </div>
-            <div class="customers__item-wrp">
-                <div class="customers__item customers__item--header">Россия</div>
-                <div class="customers__item">Москва</div>
-                <div class="customers__item">Санкт-Петербург</div>
-                <div class="customers__item">Новосибирск</div>
-                <div class="customers__item">Екатеринбург</div>
-                <div class="customers__item">Казань</div>
-                <div class="customers__item">Челябинск</div>
-                <div class="customers__item">Омск</div>
-                <div class="customers__item">Екатеринбург</div>
-                <div class="customers__item">Самара</div>
-                <div class="customers__item">Уфа</div>
-                <div class="customers__item">Ростов-на-Дону</div>
-                <div class="customers__item">Красноярск</div>
-                <div class="customers__item">Пермь</div>
-                <div class="customers__item">Воронеж</div>
-                <div class="customers__item">Волгоград</div>
-                <div class="customers__item">Краснодар</div>
-                <div class="customers__item">Саратов</div>
-                <div class="customers__item">Тюмень</div>
-                <div class="customers__item">Тольятти</div>
-                <div class="customers__item">Барнаул</div>
-                <div class="customers__item">Ижевск</div>
-                <div class="customers__item">Ульяновск</div>
-                <div class="customers__item">Иркутск</div>
-                <div class="customers__item">Хабаровск</div>
-                <div class="customers__item">Ярославль</div>
-                <div class="customers__item">Владивосток</div>
-                <div class="customers__item">Махачкала</div>
-                <div class="customers__item">Томск</div>
-                <div class="customers__item">Оренбург</div>
-                <div class="customers__item">Кемерово</div>
-                <div class="customers__item">Новокузнецк</div>
-                <div class="customers__item">Рязань</div>
-                <div class="customers__item">Астрахань</div>
-                <div class="customers__item">Чебоксары</div>
-                <div class="customers__item">Калининград</div>
-                <div class="customers__item">Нижний Новгород</div>
-                <div class="customers__item customers__item--header">Казахстан</div>
-                <div class="customers__item customers__item--header">Украина</div>
-                <div class="customers__item customers__item--header">Молдавия</div>
-            </div>
-        </div>
-    </div>
-    <div class="partners">
-        <div class="container">
-            <div class="h3 h3--line h3--white">
-                <span>Наши партнеры</span>
-            </div>
-            <div class="partners__item-wrp">
-                <div class="partners__item partners__item--kontaktor"></div>
-                <div class="partners__item partners__item--keaz"></div>
-                <div class="partners__item partners__item--tfl"></div>
-                <div class="partners__item partners__item--kontakt"></div>
-            </div>
-        </div>
-    </div>
-    <div class="contacts">
-        <div class="h3 h3--line h3--white">
-            <span>Контакты</span>
-        </div>
-        <div class="contacts-wrp">
-            <div class="contacts__map-wrp">
-                <div class="contacts__map" id="contactMap"></div>
-            </div>
-            <div class="contacts__content">
-                <div class="contacts__header">Название компании:</div>
-                <div class="contacts__text">ООО "ЭлСнаб"</div>
-                <div class="contacts__header">Адрес:</div>
-                <div class="contacts__text">г.Ульяновск, ул. Локомотивная 10, офис 105</div>
-                <div class="contacts__header">Телефон:</div>
-                <a href="#" class="contacts__text">8(8422)71-20-99</a>
-                <a href="#" class="contacts__text">+7(917)633-43-96</a>
-                <div class="contacts__header">Электронная почта:</div>
-                <a href="#" class="contacts__text">elsnab73@gmail.com</a>
-                <a href="#" class="contacts__text">nva073@yandex.ru</a>
-            </div>
-        </div>
-    </div>
+  <div class="detail-info">
+    <div class="detail-info__container">
+      <div class="detail-info__inner">
+        <div class="detail-info__descr">
+          <h3>Описание</h3>
 
-    <div class="modal fade bd-example-modal-sm question-for-specialist" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <form action="./mail.php" method="POST" class="welcome__form" name="callback">
-                <div class="welcome__header-form">Заполните форму!</div>
-                <input type="text" name="name" placeholder="Имя*" required>
-                <input type="tel" name="phone" placeholder="Телефон*" required>
-                <input type="email" name="email" placeholder="Электронная почта*" required>
-                <input type="text" name="question" placeholder="Вопрос">
-                <button type="submit" class="welcome__button">Отправить</button>
-            </form>
+          <p>Автоматические выключатели сери ВА 5043 предназначены для эксплуатации в электроустановках с напряжением до
+            660 В переменного тока частоты 50 и 60 Гц и до 440 В постоянного тока.Оперативных включений и отключений
+            электрических цепей, а также для защиты электрооборудования от перегрузок и коротких замыканий</p>
+
+          <p>Выключатели изготавливаются с микропроцессорным максимальным расцепителем и полупроводниковым что позволяет
+            самостоятельно устанавливать:</p>
+
+          <ul>
+            <li>уставку номинального тока в диапазоне 480-2200А</li>
+            <li>типа защитной характеристики</li>
+            <li>уставки по току срабатывания в зоне короткого замыкания</li>
+            <li>уставки по времени срабатывания в зоне перегрузки</li>
+            <li>уставки по времени срабатывания в зоне селективности</li>
+            <li>уставки по току срабатывания при однофазном коротком замыкании</li>
+          </ul>
         </div>
-    </div>
-    <div class="modal fade bd-example-modal-sm price-list" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <form action="./mail.php" method="POST" class="welcome__form" name="donwload_price">
-                <div class="welcome__header-form">Скачать прайс-лист!</div>
-                <input type="text" name="name" placeholder="Имя*" required>
-                <input type="tel" name="phone" placeholder="Телефон*" required>
-                <input type="email" name="email" placeholder="Электронная почта*" required>
-                <button type="submit" class="welcome__button">Отправить</button>
-            </form>
+
+        <div class="detail-info__charac">
+          <h3>Характеристики</h3>
+
+          <ul>
+            <li>
+              <span>Тип изделия</span>
+              <span>Выключатель автоматический в литом корпусе</span>
+            </li>
+
+            <li>
+              <span>Номинальный ток</span>
+              <span>1600/2000А</span>
+            </li>
+
+            <li>
+              <span>Количество силовых полюсов</span>
+              <span>3</span>
+            </li>
+
+            <li>
+              <span>Номинальная отключающая способность, кА</span>
+              <span>до 135</span>
+            </li>
+
+            <li>
+              <span>Напряжение</span>
+              <span>Переменный 660В, постоянный 440В</span>
+            </li>
+
+            <li>
+              <span>Исполнения по способу устновки</span>
+              <span>Стационарное/выдвижное</span>
+            </li>
+
+            <li>
+              <span>Вид привода</span>
+              <span>Ручной/Электромагнитный</span>
+            </li>
+
+            <li>
+              <span>Тип дополнительного распецителя </span>
+              <span>Независимый распределитель</span>
+            </li>
+
+            <li>
+              <span>Климатическое исполнение</span>
+              <span>УХЛЗ</span>
+            </li>
+
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
+
+  <div class="catalog catalog--sale sale">
+    <div class="container">
+      <div class="h3 h3--line">
+        <span>Выгодные предложения</span>
+      </div>
+      <div class="catalog-wrp">
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va55-43.html"></a>
+          <div class="catalog__price">67 000 руб.</div>
+          <div class="catalog__img" style="background: url(./html/img/55-43.jpg) no-repeat top center"></div>
+          <p class="catalog__desc">Автоматические выключатели <span>ВА55-43 до 1600А, стационарный, с
+              электроприводом</span></p>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./electron-a25vuz.html"></a>
+          <div class="catalog__price">123 000 руб.</div>
+          <div class="catalog__img" style="background: url(./html/img/electron.jpg) no-repeat top center"></div>
+          <p class="catalog__desc">Автоматические выключатели <span>Электрон Э25ВУ3</span></p>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va51-39.html"></a>
+          <div class="catalog__price">6 300 руб.</div>
+          <div class="catalog__img" style="background: url(./html/img/5139.png) no-repeat top center"></div>
+          <p class="catalog__desc">Автоматические выключатели <span>ВА51-39, 400-630 А</span></p>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./avm-20sv.html"></a>
+          <div class="catalog__price">57 000 руб.</div>
+          <div class="catalog__img" style="background: url(./html/img/avm20cv.jpg) no-repeat top center"></div>
+          <p class="catalog__desc">Автоматические выключатели <span>АВМ-20СВ</span></p>
+          <div class="catalog__button">подробнее</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="catalog catalog-objects">
+    <div class="container">
+      <div class="h3 h3--line h3--white">
+        <span>Каталог товаров</span>
+      </div>
+      <div class="catalog-wrp">
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va57-35.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/ba57-35.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>ВА57-35 до 250А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va04-36.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/0436.png) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>ВА04-36 до 630А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va51-39.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/5139.png) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>ВА51-39 до 630А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./a3790.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/3790.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>А3790 до 630А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va50-41.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/50-41.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>ВА50-41 до 1000А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./va50-43.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/50-43.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>ВА50-43 до 2000А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./avm.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/avm.png) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>АВМ до 2000А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./av2m.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/av2m.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>АВ2М до 2000А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./electron.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/electron.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Автоматические выключатели <span>Электрон до 6300А</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./vakuumnye-vyklyuchateli-bb-tel-ism.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/bb-tel.png) no-repeat center"></div>
+          <div class="catalog__desc">Вакуумные выключатели <span>ВВ/TEL(ISM)</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./bloki-upravleniya-i-pitaniya-bb-tel-ism.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/bp--tel.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Блоки управления и питания <span>BB/TEL(ISM)</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+        <div class="catalog__item">
+          <a class="catalog__link" href="./kvt-10.html"></a>
+          <!--<div class="catalog__price">770 000 руб.</div>-->
+          <div class="catalog__img" style="background: url(./html/img/kvt-10.jpg) no-repeat center"></div>
+          <div class="catalog__desc">Контакторы вакуумные <span>КВТ 10</span></div>
+          <div class="catalog__button">подробнее</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="customers">
+    <div class="container">
+      <div class="h3 h3--line h3--white">
+        <span>География наших поставок</span>
+      </div>
+      <div class="customers__item-wrp">
+        <div class="customers__item customers__item--header">Россия</div>
+        <div class="customers__item">Москва</div>
+        <div class="customers__item">Санкт-Петербург</div>
+        <div class="customers__item">Новосибирск</div>
+        <div class="customers__item">Екатеринбург</div>
+        <div class="customers__item">Казань</div>
+        <div class="customers__item">Челябинск</div>
+        <div class="customers__item">Омск</div>
+        <div class="customers__item">Екатеринбург</div>
+        <div class="customers__item">Самара</div>
+        <div class="customers__item">Уфа</div>
+        <div class="customers__item">Ростов-на-Дону</div>
+        <div class="customers__item">Красноярск</div>
+        <div class="customers__item">Пермь</div>
+        <div class="customers__item">Воронеж</div>
+        <div class="customers__item">Волгоград</div>
+        <div class="customers__item">Краснодар</div>
+        <div class="customers__item">Саратов</div>
+        <div class="customers__item">Тюмень</div>
+        <div class="customers__item">Тольятти</div>
+        <div class="customers__item">Барнаул</div>
+        <div class="customers__item">Ижевск</div>
+        <div class="customers__item">Ульяновск</div>
+        <div class="customers__item">Иркутск</div>
+        <div class="customers__item">Хабаровск</div>
+        <div class="customers__item">Ярославль</div>
+        <div class="customers__item">Владивосток</div>
+        <div class="customers__item">Махачкала</div>
+        <div class="customers__item">Томск</div>
+        <div class="customers__item">Оренбург</div>
+        <div class="customers__item">Кемерово</div>
+        <div class="customers__item">Новокузнецк</div>
+        <div class="customers__item">Рязань</div>
+        <div class="customers__item">Астрахань</div>
+        <div class="customers__item">Чебоксары</div>
+        <div class="customers__item">Калининград</div>
+        <div class="customers__item">Нижний Новгород</div>
+        <div class="customers__item customers__item--header">Казахстан</div>
+        <div class="customers__item customers__item--header">Украина</div>
+        <div class="customers__item customers__item--header">Молдавия</div>
+      </div>
+    </div>
+  </div>
+  <div class="partners">
+    <div class="container">
+      <div class="h3 h3--line h3--white">
+        <span>Наши партнеры</span>
+      </div>
+      <div class="partners__item-wrp">
+        <div class="partners__item partners__item--kontaktor"></div>
+        <div class="partners__item partners__item--keaz"></div>
+        <div class="partners__item partners__item--tfl"></div>
+        <div class="partners__item partners__item--kontakt"></div>
+      </div>
+    </div>
+  </div>
+  <div class="contacts">
+    <div class="h3 h3--line h3--white">
+      <span>Контакты</span>
+    </div>
+    <div class="contacts-wrp">
+      <div class="contacts__map-wrp">
+        <div class="contacts__map" id="contactMap"></div>
+      </div>
+      <div class="contacts__content">
+        <div class="contacts__header">Название компании:</div>
+        <div class="contacts__text">ООО "ЭлСнаб"</div>
+        <div class="contacts__header">Адрес:</div>
+        <div class="contacts__text">г.Ульяновск, ул. Локомотивная 10, офис 105</div>
+        <div class="contacts__header">Телефон:</div>
+        <a href="#" class="contacts__text">8(8422)71-20-99</a>
+        <a href="#" class="contacts__text">+7(917)633-43-96</a>
+        <div class="contacts__header">Электронная почта:</div>
+        <a href="#" class="contacts__text">elsnab73@gmail.com</a>
+        <a href="#" class="contacts__text">nva073@yandex.ru</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-sm question-for-specialist" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form action="./mail.php" method="POST" class="welcome__form" name="callback">
+        <div class="welcome__header-form">Заполните форму!</div>
+        <input type="text" name="name" placeholder="Имя*" required>
+        <input type="tel" name="phone" placeholder="Телефон*" required>
+        <input type="email" name="email" placeholder="Электронная почта*" required>
+        <input type="text" name="question" placeholder="Вопрос">
+        <button type="submit" class="welcome__button">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-sm submit-application" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form action="./mail.php" method="POST" class="welcome__form" name="submit-application">
+        <div class="welcome__header-form">Оставить заявку</div>
+        <div class="welcome__header-form-sended">
+          Ваш запрос принят
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23" fill="none">
+            <path
+              d="M8.49049 16.8025L2.55058 10.4128L0 13.1565L8.49049 22.2899L26 3.45463L23.4494 0.710938L8.49049 16.8025Z"
+              fill="white" />
+          </svg>
+        </div>
+        <input type="text" name="name" placeholder="Имя*" required>
+        <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
+        <input type="tel" name="phone" placeholder="Телефон*" required>
+        <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
+        <input type="email" name="email" placeholder="Электронная почта*" required>
+
+        <div class="welcome__form-group">
+          <textarea type="text" name="question" placeholder="Вопрос"></textarea>
+
+          <label class="welcome__form-checkbox-label" for="checkbox-6">
+            <input type="checkbox" id="checkbox-6">
+            <div class="welcome__form-checkbox-decor"></div>
+
+            <span>Я согласен на обработку персональных данных</span>
+          </label>
+        </div>
+        <button class="welcome__button" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-sm price-list" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <form action="./mail.php" method="POST" class="welcome__form" name="donwload_price">
+        <div class="welcome__header-form">Скачать прайс-лист!</div>
+        <input type="text" name="name" placeholder="Имя*" required>
+        <input type="tel" name="phone" placeholder="Телефон*" required>
+        <input type="email" name="email" placeholder="Электронная почта*" required>
+        <button type="submit" class="welcome__button">Отправить</button>
+      </form>
+    </div>
+  </div>
 
 
-    <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU" type="text/javascript"></script>
-    <script src="./html/script/jquery-2.1.3.min.js"></script>
-    <script src="./html/script/bootstrap.min.js"></script>
-    <script src="./html/script/parallax.min.js"></script>
-    <script src="./html/script/swiper.jquery.min.js"></script>
-    <script src="./html/script/script.js?v=1"></script>
+  <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+  <script src="./html/script/jquery-2.1.3.min.js"></script>
+  <script src="./html/script/bootstrap.min.js"></script>
+  <script src="./html/script/parallax.min.js"></script>
+  <script src="./html/script/swiper.jquery.min.js"></script>
+  <script src="./html/script/script.js?v=1"></script>
 </body>
+
 </html>

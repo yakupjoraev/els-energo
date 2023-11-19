@@ -40,28 +40,115 @@
     <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-    <header  class="header">
-        <a class="header__logo-block" href="./"></a>
-        <div class="nav">
+  <header class="header">
+    <div class="header__top">
+      <a class="header__logo-block" href="./"></a>
+      <!-- <div class="nav">
             <span data-toggle="modal" data-target=".price-list" class="nav__item nav__item--contacts">Прайс лист</span>
             <a href="#sale" class="nav__item nav__item--services">спец предложение</a>
             <a href="#catalog-objects" class="nav__item nav__item--advantages">каталог</a>
             <a href="#contacts" class="nav__item nav__item--advantages">контакты</a>
             <span data-toggle="modal" data-target=".question-for-specialist" class="nav__item nav__item--advantages">заказать звонок</span>
+        </div> -->
+      <div class="header__phone">
+        <a href="tel:+8422712099" class="phone__block--link">8 (8422) 71-20-99</a>
+        <a href="tel:+79176334396" class="phone__block--link">+7 (917) 633-43-96</a>
+        <a href="mailto:nva073@yandex.ru" class="phone__block--link phone__block--link-mail">nva073@yandex.ru</a>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <div class="header-catalog">
+        <div class="header-catalog__btn" data-catalog-btn>
+          <img src="./html/img/header-catalog-icon.svg" alt="catalog icon">
+
+          <span>Каталог товаров</span>
+          <picture>
+            <source media="(max-width: 991px)" srcset="./html/img/header-catalog-tringle-mobile.svg" />
+            <source media="(min-width: 992px)" srcset="./html/img/header-catalog-tringle.svg" />
+            <img src="./html/img/header-catalog-tringle.svg" alt="catalog tringle">
+          </picture>
+
         </div>
-        <div class="header__phone">
-            <a href="tel:+8422358716" class="phone__block--link">8 (8422) 35-87-16</a>
-            <a href="tel:+79176334396" class="phone__block--link">+7 (917) 633-43-96</a>
-        </div>
-        <div class="mobile-menu-button">
-            <div class="nav-line-wrp">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
+
+        <ul class="header-catalog__list" data-catalog-list>
+          <li>
+            <a href="#">
+              <img src="./html/img/header-catalog-item-1.svg" alt="Автоматические выключатели">
+              Автоматические выключатели</a>
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+
+            <ul>
+              <li>
+                <a href="#">Серия ВА/А3790 </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+
+                <ul>
+                  <li><a href="#">ВА55-43 до 1600А</a></li>
+                  <li><a href="#">ВА51-39, 400-630А</a></li>
+                  <li><a href="#">ВА57-35 до 250А</a></li>
+                  <li><a href="#">ВА57-35 до 250А</a></li>
+                  <li><a href="#">ВА04-36 до 630А</a></li>
+                  <li><a href="#">ВА51-39 до 630А</a></li>
+                  <li><a href="#">ВА50-41 до 1000А</a></li>
+                  <li><a href="#">ВА50-43 до 2000А</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="#">Серия АВМ/А2ВМ
+
+                </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+              </li>
+
+              <li>
+                <a href="#">Серия Электрон
+
+                </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="./html/img/header-catalog-item-2.svg" alt=" Вакуумные выключатели">
+              Вакуумные выключатели</a>
+
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="./html/img/header-catalog-item-3.svg" alt="Контакторы вакуумные">
+              Контакторы вакуумные</a>
+
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav">
+        <span data-toggle="modal" data-target=".price-list" class="nav__item nav__item--contacts">
+          Запросить
+          прайс-лист
+        </span>
+
+        <a href="#contacts" class="nav__item">Контакты</a>
+      </div>
+
+      <span data-toggle="modal" data-target=".question-for-specialist" class="nav__item nav__item--advantages">
+        Заказать
+        звонок
+      </span>
+
+      <div class="burger">
+        <span></span>
+      </div>
+    </div>
+
+  </header>
     <div class="loader-window"></div>
 
     <div class="welcome detail">

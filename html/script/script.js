@@ -146,6 +146,12 @@ sendingDataForm();
 
 
 function headerCatalog() {
+  const container = document.querySelector('.header-catalog');
+
+  if (!container) {
+    return null
+  }
+
   const btn = document.querySelector('[data-catalog-btn]');
   const list = document.querySelector('[data-catalog-list]');
 
@@ -153,11 +159,23 @@ function headerCatalog() {
     list.classList.toggle('view');
   })
 
-  document.addEventListener('click', (event) => {
-    if (!btn.contains(event.target)) {
-      list.classList.remove('view');
-    }
-  });
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    document.addEventListener('click', (event) => {
+      if (!btn.contains(event.target)) {
+        list.classList.remove('view');
+      }
+    });
+  }
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    let arrows = document.querySelectorAll('.header-catalog__arrow');
+
+    arrows.forEach(arrow => {
+      arrow.addEventListener('click', () => {
+        arrow.classList.toggle('open')
+      })
+    });
+  }
 }
 
 headerCatalog();

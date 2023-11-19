@@ -81,10 +81,13 @@
             <a href="#">
               <img src="./html/img/header-catalog-item-1.svg" alt="Автоматические выключатели">
               Автоматические выключатели</a>
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
 
             <ul>
               <li>
                 <a href="#">Серия ВА/А3790 </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+
                 <ul>
                   <li><a href="#">ВА55-43 до 1600А</a></li>
                   <li><a href="#">ВА51-39, 400-630А</a></li>
@@ -97,8 +100,19 @@
                 </ul>
               </li>
 
-              <li><a href="#">Серия АВМ/А2ВМ</a></li>
-              <li><a href="#">Серия Электрон</a></li>
+              <li>
+                <a href="#">Серия АВМ/А2ВМ
+
+                </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+              </li>
+
+              <li>
+                <a href="#">Серия Электрон
+
+                </a>
+                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+              </li>
             </ul>
           </li>
 
@@ -106,12 +120,16 @@
             <a href="#">
               <img src="./html/img/header-catalog-item-2.svg" alt=" Вакуумные выключатели">
               Вакуумные выключатели</a>
+
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
           </li>
 
           <li>
             <a href="#">
               <img src="./html/img/header-catalog-item-3.svg" alt="Контакторы вакуумные">
               Контакторы вакуумные</a>
+
+            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
           </li>
         </ul>
       </div>
@@ -452,6 +470,15 @@
     <div class="modal-dialog">
       <form action="./mail.php" method="POST" class="welcome__form" name="callback">
         <div class="welcome__header-form">Заказать звонок</div>
+        <div class="welcome__header-form-sended">
+          Ваш запрос принят
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23" fill="none">
+            <path
+              d="M8.49049 16.8025L2.55058 10.4128L0 13.1565L8.49049 22.2899L26 3.45463L23.4494 0.710938L8.49049 16.8025Z"
+              fill="white" />
+          </svg>
+        </div>
         <input type="text" name="name" placeholder="Имя*" required>
         <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
         <input type="tel" name="phone" placeholder="Телефон*" required>
@@ -467,11 +494,50 @@
       </form>
     </div>
   </div>
+
+  <div class="modal fade bd-example-modal-sm submit-application" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form action="./mail.php" method="POST" class="welcome__form" name="callback">
+        <div class="welcome__header-form">Заказать звонок</div>
+        <div class="welcome__header-form-sended">
+          Ваш запрос принят
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23" fill="none">
+            <path
+              d="M8.49049 16.8025L2.55058 10.4128L0 13.1565L8.49049 22.2899L26 3.45463L23.4494 0.710938L8.49049 16.8025Z"
+              fill="white" />
+          </svg>
+        </div>
+        <input type="text" name="name" placeholder="Имя*" required>
+        <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
+        <input type="tel" name="phone" placeholder="Телефон*" required>
+        <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
+
+        <label class="welcome__form-checkbox-label" for="checkbox-5">
+          <input type="checkbox" id="checkbox-5">
+          <div class="welcome__form-checkbox-decor"></div>
+
+          <span>Я согласен на обработку персональных данных</span>
+        </label>
+        <button class="welcome__button" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
   <div class="modal fade bd-example-modal-sm price-list" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
       <form action="./mail.php" method="POST" class="welcome__form" name="donwload_price">
         <div class="welcome__header-form">Запрос на прайс-лист</div>
+        <div class="welcome__header-form-sended">
+          Ваш запрос принят
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23" fill="none">
+            <path
+              d="M8.49049 16.8025L2.55058 10.4128L0 13.1565L8.49049 22.2899L26 3.45463L23.4494 0.710938L8.49049 16.8025Z"
+              fill="white" />
+          </svg>
+        </div>
         <input type="text" name="name" placeholder="Имя*" required>
         <div class="welcome__form-att">* — Поля обязательные к заполнению</div>
         <input type="email" name="email" placeholder="Электронная почта*" required>
