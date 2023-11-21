@@ -81,12 +81,23 @@
             <a href="#">
               <img src="./html/img/header-catalog-item-1.svg" alt="Автоматические выключатели">
               Автоматические выключатели</a>
-            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+
+            <div class="header-catalog__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Vector" d="M1 1L4.65217 5L8 1" stroke="#7D7D7D" />
+              </svg>
+
+            </div>
 
             <ul>
               <li>
                 <a href="#">Серия ВА/А3790 </a>
-                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+                <div class="header-catalog__arrow">
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M1 1L4.65217 5L8 1" stroke="#7D7D7D" />
+                  </svg>
+
+                </div>
 
                 <ul>
                   <li><a href="#">ВА55-43 до 1600А</a></li>
@@ -104,14 +115,24 @@
                 <a href="#">Серия АВМ/А2ВМ
 
                 </a>
-                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+                <div class="header-catalog__arrow">
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M1 1L4.65217 5L8 1" stroke="#7D7D7D" />
+                  </svg>
+
+                </div>
               </li>
 
               <li>
                 <a href="#">Серия Электрон
 
                 </a>
-                <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+                <div class="header-catalog__arrow">
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M1 1L4.65217 5L8 1" stroke="#7D7D7D" />
+                  </svg>
+
+                </div>
               </li>
             </ul>
           </li>
@@ -121,7 +142,12 @@
               <img src="./html/img/header-catalog-item-2.svg" alt=" Вакуумные выключатели">
               Вакуумные выключатели</a>
 
-            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+            <div class="header-catalog__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Vector" d="M1 1L4.65217 5L8 1" stroke="#7D7D7D" />
+              </svg>
+
+            </div>
           </li>
 
           <li>
@@ -129,16 +155,21 @@
               <img src="./html/img/header-catalog-item-3.svg" alt="Контакторы вакуумные">
               Контакторы вакуумные</a>
 
-            <img class="header-catalog__arrow" src="./html/img/catalog-arrow.svg" alt="catalog-arrow">
+            <div class="header-catalog__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Vector" d="M1 1L4.65217 5L8 1" stroke="#7D7D7D" />
+              </svg>
+
+            </div>
           </li>
         </ul>
       </div>
 
       <div class="nav">
-        <span data-toggle="modal" data-target=".price-list" class="nav__item nav__item--contacts">
-          Запросить
+        <a href="./html/files/price.xls" download="./html/files/price.xls" class="nav__item nav__item--contacts">
+          Скачать
           прайс-лист
-        </span>
+        </a>
 
         <a href="#contacts" class="nav__item">Контакты</a>
       </div>
@@ -246,7 +277,7 @@
     </div>
   </div>
 
-  <div class="catalog catalog--sale sale">
+  <!-- <div class="catalog catalog--sale sale">
     <div class="container">
       <div class="h3 h3--line">
         <span>Выгодные предложения</span>
@@ -283,7 +314,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="catalog catalog-objects">
     <div class="container">
@@ -468,6 +499,12 @@
   <div class="modal fade bd-example-modal-sm question-for-specialist" tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 1L13 13M1 13L13 1" stroke="white" />
+          </svg></span>
+      </button>
       <form action="./mail.php" method="POST" class="welcome__form" name="callback">
         <div class="welcome__header-form">Заказать звонок</div>
         <div class="welcome__header-form-sended">
@@ -524,6 +561,7 @@
       </form>
     </div>
   </div>
+
   <div class="modal fade bd-example-modal-sm price-list" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">

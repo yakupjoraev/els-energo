@@ -586,7 +586,7 @@ body {
   justify-content: space-between;
   column-gap: 50px;
   padding: 0 50px;
-  padding-top: 200px;
+  padding-top: 160px;
   margin-bottom: 60px;
   overflow: hidden;
 }
@@ -631,18 +631,18 @@ body {
   font-weight: 400;
   color: #111;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .welcome__form input {
-  height: 40px;
+  height: 32px;
   width: 100%;
   border-radius: 10px;
   line-height: 40px;
   border: none;
   color: #111;
   padding: 0 10px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   transition: box-shadow .2s, border-color .2s ease-in-out;
 }
 
@@ -883,6 +883,7 @@ body {
   border-radius: 0px 0px 20px 20px;
   background-color: #fff;
   backdrop-filter: blur(5px);
+  border: 1px solid #E0E0E0;
 }
 
 .header-catalog ul li {
@@ -972,7 +973,7 @@ body {
 .welcome__logo {}
 
 .welcome__info {
-  padding: 30px 24px 24px;
+  padding: 20px 24px 20px;
   border-radius: 25px;
   background: rgba(224, 224, 224, 0.80);
   backdrop-filter: blur(5px);
@@ -1004,14 +1005,14 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 24px;
+  padding: 20px;
   background-color: rgba(224, 224, 224, 0.80);
   backdrop-filter: blur(5px);
   border-radius: 25px;
 }
 
 .welcome__border {
-  margin: 24px 0;
+  margin: 20px 0;
   width: 100%;
   height: 1px;
   background-color: #E0E0E0;
@@ -1375,6 +1376,29 @@ body {
   display: none;
 }
 
+.close {
+  position: absolute;
+  right: 38px;
+  top: 24px;
+  opacity: 1;
+  z-index: 2;
+}
+
+.detail-info__inner h3 svg {
+  display: none;
+}
+
+body.modal-open .header {
+  padding-right: 69px;
+}
+
+@media (max-width: 1444px) {
+  body.modal-open .header {
+    padding-right: 50px;
+  }
+
+}
+
 @media (max-width: 1279px) {
 
   .welcome.detail {
@@ -1564,10 +1588,10 @@ body {
     border-bottom: 1px solid #E0E0E0;
   }
 
-  .nav__item.active {
+  /* .nav__item.active {
     border-bottom: 2px solid #FF7A00;
     background-color: #EFEFEF;
-  }
+  } */
 
   .nav__item--contacts {
     border-bottom: 2px solid #FF7A00;
@@ -1675,6 +1699,13 @@ body {
 }
 
 @media (max-width: 991px) {
+
+
+
+  .close {
+    top: 20px;
+    right: 20px;
+  }
 
   .welcome__header {
     margin-bottom: 30px;
@@ -1796,6 +1827,51 @@ body {
   .welcome__logo-middle img {
     max-width: 375px;
   }
+
+  .detail-info__inner h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .detail-info__inner h3 svg {
+    display: block;
+    transition: transform 0.2s linear;
+  }
+
+  .detail-info__descr.view h3 svg,
+  .detail-info__charac h3 svg {
+    transform: rotate(180deg);
+  }
+
+  .detail-info__descr h3,
+  .detail-info__charac h3 {
+    margin-bottom: 0 !important;
+
+    transition: 0.1s linear;
+  }
+
+  .detail-info__descr.view h3,
+  .detail-info__charac.view h3 {
+    margin-bottom: 25px !important;
+  }
+
+  .detail-info__descr h3~*,
+  .detail-info__charac h3~* {
+    max-height: 0;
+    margin: 0 !important;
+    overflow: hidden;
+
+    transition: 0.3s linear;
+  }
+
+  .detail-info__descr.view h3~*,
+  .detail-info__charac.view h3~* {
+    max-height: 1000px;
+    overflow: hidden;
+    margin-bottom: 25px !important;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -1817,6 +1893,20 @@ body {
     border-top: 2px solid #FF7A00;
   }
 
+  /* .header-catalog__arrow.open~ul:hover {
+    border: 0;
+  }
+
+  .header-catalog__arrow.open~ul ul:hover {
+    border: 0;
+  } */
+
+  .header-catalog ul li:hover {
+    border-bottom-color: transparent;
+    border-bottom-width: 1px;
+    background-color: #EFEFEF;
+  }
+
   .header-catalog ul a {
     font-size: 12px;
   }
@@ -1830,9 +1920,37 @@ body {
   }
 
   .header-catalog__arrow {
+    position: relative;
     display: flex;
-    padding: 16px;
+    padding: 8px;
+    margin-right: 8px;
+    background-color: #efecec;
   }
+
+  .header-catalog__arrow.open {
+    background-color: #7D7D7D;
+  }
+
+  .header-catalog__arrow.open svg {
+    transition: transform 0.2s linear;
+    transform: rotate(180deg);
+  }
+
+  .header-catalog__arrow.open svg path {
+    stroke: #fff;
+    /* filter: grayscale(1) contrast(1); */
+  }
+
+  /* .header-catalog__arrow.open::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #7D7D7D;
+    z-index: 2;
+  } */
 
   .header-catalog ul ul {
     position: static;
@@ -1855,6 +1973,7 @@ body {
     max-height: 0;
     border-radius: 0;
     overflow: hidden;
+    border: 0;
 
     transition: max-height 0.3s linear;
   }
