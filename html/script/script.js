@@ -210,6 +210,26 @@ function detailInfoViewMobile() {
 
 detailInfoViewMobile();
 
+//плавный скролл
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const blockID = anchor.getAttribute('href').substr(1)
+    const element = document.getElementById(blockID);
+
+    const offset = 200; // Высота сверху
+
+    window.scrollTo({
+      top: element.offsetTop - offset,
+      behavior: 'smooth'
+    });
+  })
+};
+
+
 // validate////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let forms = document.querySelectorAll('form');
@@ -218,7 +238,8 @@ forms.forEach(form => {
   const formInputs = form.querySelectorAll('.js-input');
   const inputEmail = form.querySelector('.js-input-email');
   const inputPhone = form.querySelector('.js-input-phone');
-
+  const checkbox = form.querySelector('.js-checkbox');
+  const checkboxLabel = form.querySelector('.js-checkbox-label');
 
   function validateEmail(email) {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -230,8 +251,7 @@ forms.forEach(form => {
     return re.test(String(phone));
   }
 
-
-  form.onsubmit = function () {
+  form.onsubmit = function (event) {
     let emailVal = inputEmail.value,
       phoneVal = inputPhone.value,
       emptyInputs = Array.from(formInputs).filter(input => input.value === '');
@@ -243,18 +263,18 @@ forms.forEach(form => {
       } else {
         input.classList.remove('error');
       }
-
-
-    })
+    });
 
     if (emptyInputs.length !== 0) {
       console.log('inputs not filled');
+      event.preventDefault(); // Отмена отправки формы
       return false;
     }
 
     if (!validateEmail(emailVal)) {
       console.log('email not valid');
       inputEmail.classList.add('error');
+      event.preventDefault(); // Отмена отправки формы
       return false;
     } else {
       inputEmail.classList.remove('error');
@@ -263,12 +283,22 @@ forms.forEach(form => {
     if (!validatePhone(phoneVal)) {
       console.log('phone not valid');
       inputPhone.classList.add('error');
+      event.preventDefault(); // Отмена отправки формы
       return false;
     } else {
       inputPhone.classList.remove('error');
     }
 
-  }
+    // Проверяем, отмечен ли checkbox
+    if (!checkbox.checked) {
+      console.log('checkbox not checked');
+      checkboxLabel.classList.add('error');
+      event.preventDefault(); // Отмена отправки формы
+      return false;
+    } else {
+      checkboxLabel.classList.remove('error');
+    }
+  };
 });
 
 

@@ -214,12 +214,12 @@
       </div>
       <div class="welcome__item-wrp welcome__item-wrp--form">
         <form action="./mail.php" method="POST" class="welcome__form" name="callback">
-          <div class="welcome__header-form">Оставить заявку</div>
+          <div class="welcome__header-form">Задайте вопрос специалисту</div>
           <div class="welcome__form-groups">
             <div class="welcome__form-group">
-              <input type="text" name="name" placeholder="Имя*" required>
-              <input type="tel" name="phone" placeholder="Телефон*" required>
-              <input type="email" name="email" placeholder="Электронная почта*" required>
+              <input class="js-input" type="text" name="name" placeholder="Имя*">
+              <input class="js-input js-input-phone" type="tel" name="phone" placeholder="Телефон*">
+              <input class="js-input js-input-email" type="email" name="email" placeholder="Электронная почта*">
             </div>
 
             <div class="welcome__form-group">
@@ -227,8 +227,8 @@
 
               <div class="welcome__form-att-middle">* — Поля обязательные к заполнению</div>
 
-              <label class="welcome__form-checkbox-label" for="checkbox-4">
-                <input type="checkbox" id="checkbox-4">
+              <label class="welcome__form-checkbox-label js-checkbox-label" for="checkbox-4">
+                <input class="js-checkbox" type="checkbox" id="checkbox-4">
                 <div class="welcome__form-checkbox-decor"></div>
 
                 <span>Я согласен на обработку персональных данных</span>

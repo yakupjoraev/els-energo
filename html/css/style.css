@@ -302,6 +302,8 @@ body {
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: flex-start;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .catalog__item {
@@ -1033,6 +1035,14 @@ body {
   align-items: center;
   column-gap: 8px;
   cursor: pointer;
+}
+
+.welcome__form-checkbox-label.error span {
+  color: #FF1C1C;
+}
+
+.welcome__form-checkbox-label.error .welcome__form-checkbox-decor {
+  background-color: #FF1C1C !important;
 }
 
 .welcome__form-checkbox-label input {
@@ -1822,8 +1832,8 @@ body.modal-open .header {
   } */
 
   .catalog__item {
-    flex-basis: 49%;
-    max-width: 49%;
+    flex-basis: 48%;
+    max-width: 48%;
   }
 
   .advantages__item {
