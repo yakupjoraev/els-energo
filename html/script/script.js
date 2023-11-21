@@ -151,36 +151,45 @@ function headerCatalog() {
   const container = document.querySelector('.header-catalog');
 
   if (!container) {
-    return null
+    return null;
   }
 
   const btn = document.querySelector('[data-catalog-btn]');
   const list = document.querySelector('[data-catalog-list]');
+  const arrows = document.querySelectorAll('.header-catalog__arrow');
 
   btn.addEventListener('click', () => {
     list.classList.toggle('view');
-  })
+
+    if (!list.classList.contains('view')) {
+      arrows.forEach(arrow => {
+        arrow.classList.remove('open');
+      });
+    }
+  });
 
   if (window.matchMedia("(min-width: 768px)").matches) {
     document.addEventListener('click', (event) => {
       if (!btn.contains(event.target)) {
         list.classList.remove('view');
+        arrows.forEach(arrow => {
+          arrow.classList.remove('open');
+        });
       }
     });
   }
 
   if (window.matchMedia("(max-width: 767px)").matches) {
-    let arrows = document.querySelectorAll('.header-catalog__arrow');
-
     arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
-        arrow.classList.toggle('open')
-      })
+        arrow.classList.toggle('open');
+      });
     });
   }
 }
 
 headerCatalog();
+
 
 function detailInfoViewMobile() {
   let detailItems = document.querySelectorAll('[data-detail-item]');
@@ -201,3 +210,66 @@ function detailInfoViewMobile() {
 
 detailInfoViewMobile();
 
+// validate////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let forms = document.querySelectorAll('form');
+
+forms.forEach(form => {
+  const formInputs = form.querySelectorAll('.js-input');
+  const inputEmail = form.querySelector('.js-input-email');
+  const inputPhone = form.querySelector('.js-input-phone');
+
+
+  function validateEmail(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function validatePhone(phone) {
+    let re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    return re.test(String(phone));
+  }
+
+
+  form.onsubmit = function () {
+    let emailVal = inputEmail.value,
+      phoneVal = inputPhone.value,
+      emptyInputs = Array.from(formInputs).filter(input => input.value === '');
+
+    formInputs.forEach(function (input) {
+      if (input.value === '') {
+        input.classList.add('error');
+        console.log('input not filled');
+      } else {
+        input.classList.remove('error');
+      }
+
+
+    })
+
+    if (emptyInputs.length !== 0) {
+      console.log('inputs not filled');
+      return false;
+    }
+
+    if (!validateEmail(emailVal)) {
+      console.log('email not valid');
+      inputEmail.classList.add('error');
+      return false;
+    } else {
+      inputEmail.classList.remove('error');
+    }
+
+    if (!validatePhone(phoneVal)) {
+      console.log('phone not valid');
+      inputPhone.classList.add('error');
+      return false;
+    } else {
+      inputPhone.classList.remove('error');
+    }
+
+  }
+});
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
