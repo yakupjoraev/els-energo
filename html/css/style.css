@@ -1959,6 +1959,10 @@ body.modal-open .header {
   .header-catalog ul li:hover {
     border-bottom-color: transparent;
     border-bottom-width: 1px;
+    background-color: #fff;
+  }
+
+  .header-catalog ul li.open {
     background-color: #EFEFEF;
   }
 

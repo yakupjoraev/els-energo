@@ -182,10 +182,19 @@ function headerCatalog() {
   if (window.matchMedia("(max-width: 767px)").matches) {
     arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
+        // Добавить класс 'open' к самому элементу
         arrow.classList.toggle('open');
+
+        // Добавить класс 'open' к ближайшему родителю селектора '.your-parent-selector'
+        const parent = arrow.closest('li'); // Замените '.your-parent-selector' на селектор вашего родителя
+        if (parent) {
+          parent.classList.toggle('open');
+        }
       });
     });
   }
+
+
 }
 
 headerCatalog();
