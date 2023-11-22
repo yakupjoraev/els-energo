@@ -32,9 +32,9 @@ $(document).ready(function () {
       menuLinks.removeClass('active');
       $('.nav__item--contacts').addClass('active');
     }
-    if ($('.sale').offset().top - 200 < scr && scr < ($('.sale').offset().top + $('.sale').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(1).addClass('active'); }
-    if ($('.catalog-objects').offset().top - 200 < scr && scr < ($('.catalog-objects').offset().top + $('.catalog-objects').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(2).addClass('active'); }
-    if ($('.contacts').offset().top - 200 < scr && scr < ($('.contacts').offset().top + $('.contacts').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(3).addClass('active'); }
+    // if ($('.sale').offset().top - 200 < scr && scr < ($('.sale').offset().top + $('.sale').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(1).addClass('active'); }
+    // if ($('.catalog-objects').offset().top - 200 < scr && scr < ($('.catalog-objects').offset().top + $('.catalog-objects').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(2).addClass('active'); }
+    // if ($('.contacts').offset().top - 200 < scr && scr < ($('.contacts').offset().top + $('.contacts').outerHeight() - 200)) { menuLinks.removeClass('active'); menuLinks.eq(3).addClass('active'); }
   });
 
   function initContactMaps() {
@@ -158,6 +158,14 @@ function headerCatalog() {
   const list = document.querySelector('[data-catalog-list]');
   const arrows = document.querySelectorAll('.header-catalog__arrow');
 
+  // Function to remove classes from btn and arrows
+  function removeClasses() {
+    list.classList.remove('view');
+    arrows.forEach(arrow => {
+      arrow.classList.remove('open');
+    });
+  }
+
   btn.addEventListener('click', () => {
     list.classList.toggle('view');
 
@@ -171,10 +179,7 @@ function headerCatalog() {
   if (window.matchMedia("(min-width: 768px)").matches) {
     document.addEventListener('click', (event) => {
       if (!btn.contains(event.target)) {
-        list.classList.remove('view');
-        arrows.forEach(arrow => {
-          arrow.classList.remove('open');
-        });
+        removeClasses();
       }
     });
   }
@@ -182,19 +187,24 @@ function headerCatalog() {
   if (window.matchMedia("(max-width: 767px)").matches) {
     arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
-        // Добавить класс 'open' к самому элементу
         arrow.classList.toggle('open');
-
-        // Добавить класс 'open' к ближайшему родителю селектора '.your-parent-selector'
-        const parent = arrow.closest('li'); // Замените '.your-parent-selector' на селектор вашего родителя
+        const parent = arrow.closest('li');
         if (parent) {
           parent.classList.toggle('open');
         }
       });
     });
+
+    // Add event listener to remove classes when clicking on links inside the list
+    list.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A') {
+        list.classList.remove('view');
+        arrows.forEach(arrow => {
+          arrow.classList.remove('open');
+        });
+      }
+    });
   }
-
-
 }
 
 headerCatalog();
@@ -261,9 +271,9 @@ forms.forEach(form => {
   }
 
   form.onsubmit = function (event) {
-    let emailVal = inputEmail.value,
-      phoneVal = inputPhone.value,
-      emptyInputs = Array.from(formInputs).filter(input => input.value === '');
+    let emailVal = inputEmail ? inputEmail.value : null;
+    let phoneVal = inputPhone ? inputPhone.value : null;
+    let emptyInputs = Array.from(formInputs).filter(input => input.value === '');
 
     formInputs.forEach(function (input) {
       if (input.value === '') {
@@ -280,31 +290,31 @@ forms.forEach(form => {
       return false;
     }
 
-    if (!validateEmail(emailVal)) {
+    if (inputEmail && !validateEmail(emailVal)) {
       console.log('email not valid');
       inputEmail.classList.add('error');
       event.preventDefault(); // Отмена отправки формы
       return false;
-    } else {
+    } else if (inputEmail) {
       inputEmail.classList.remove('error');
     }
 
-    if (!validatePhone(phoneVal)) {
+    if (inputPhone && !validatePhone(phoneVal)) {
       console.log('phone not valid');
       inputPhone.classList.add('error');
       event.preventDefault(); // Отмена отправки формы
       return false;
-    } else {
+    } else if (inputPhone) {
       inputPhone.classList.remove('error');
     }
 
     // Проверяем, отмечен ли checkbox
-    if (!checkbox.checked) {
+    if (checkbox && !checkbox.checked) {
       console.log('checkbox not checked');
       checkboxLabel.classList.add('error');
       event.preventDefault(); // Отмена отправки формы
       return false;
-    } else {
+    } else if (checkboxLabel) {
       checkboxLabel.classList.remove('error');
     }
   };
