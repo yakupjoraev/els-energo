@@ -176,7 +176,7 @@ function headerCatalog() {
     }
   });
 
-  if (window.matchMedia("(min-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 1200px)").matches) {
     document.addEventListener('click', (event) => {
       if (!btn.contains(event.target)) {
         removeClasses();
@@ -184,7 +184,7 @@ function headerCatalog() {
     });
   }
 
-  if (window.matchMedia("(max-width: 767px)").matches) {
+  if (window.matchMedia("(max-width: 1199px)").matches) {
     arrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
         arrow.classList.toggle('open');
