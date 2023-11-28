@@ -147,6 +147,32 @@ function sendingDataForm() {
 sendingDataForm();
 
 
+
+
+function sendedFormNotification() {
+  // Создаем элемент
+  var element = document.createElement('span');
+  element.setAttribute('data-toggle', 'modal');
+  element.setAttribute('data-target', '.form-sending');
+  element.className = 'nav__item nav__item--advantages';
+
+  // Добавляем элемент в DOM (может потребоваться адаптировать, в зависимости от вашей структуры)
+  document.body.appendChild(element);
+
+  // Имитируем клик
+  element.click();
+
+  // Удаляем элемент из DOM (если нужно)
+  document.body.removeChild(element);
+}
+
+// Вызываем функцию для имитации клика
+// sendedFormNotification();
+
+
+
+
+
 function headerCatalog() {
   const container = document.querySelector('.header-catalog');
 
