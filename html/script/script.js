@@ -239,7 +239,7 @@ headerCatalog();
 function detailInfoViewMobile() {
   let detailItems = document.querySelectorAll('[data-detail-item]');
 
-  if (window.matchMedia("(max-width: 992px)").matches) {
+  if (window.matchMedia("(max-width: 1025px)").matches) {
     detailItems.forEach(detailItem => {
       const title = detailItem.querySelector('h3');
 
